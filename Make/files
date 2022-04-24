@@ -1,0 +1,22 @@
+freesteam=freesteam-2.1
+
+$(freesteam)/common.C
+$(freesteam)/b23.C
+$(freesteam)/backwards.C
+$(freesteam)/region1.C
+$(freesteam)/region2.C
+$(freesteam)/region3.C
+$(freesteam)/region4.C
+$(freesteam)/steam.C
+$(freesteam)/steam_pv.C
+$(freesteam)/steam_ph.C
+$(freesteam)/steam_pT.C
+$(freesteam)/surftens.C
+$(freesteam)/thcond.C
+$(freesteam)/viscosity.C
+$(freesteam)/zeroin.C
+
+IAPWSThermo/IAPWS-IF97.C
+IAPWSThermo/IAPWSThermos.C
+
+LIB = $(FOAM_USER_LIBBIN)/libfluidThermophysicalModelsNew
