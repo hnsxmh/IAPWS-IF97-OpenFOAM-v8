@@ -54,4 +54,4 @@ IAPWS-IF97 Properties of Water and Steam library compatible for OpenFOAM v8.
 	
 - result of test case **buoyantCavity_IAWPS**:
 
-   ![Temperature](buoyantCavity_IAWPS\Temperature.png)![p_rgh](buoyantCavity_IAWPS\p_rgh.png)![velocity-Y](buoyantCavity_IAWPS\\velocity-Y.png)
+   ![Temperature](./buoyantCavity_IAWPS/Temperature.png)![p_rgh](./buoyantCavity_IAWPS/p_rgh.png)![velocity-Y](./buoyantCavity_IAWPS/velocity-Y.png)
