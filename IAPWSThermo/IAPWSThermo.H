@@ -206,10 +206,14 @@ public:
 //useless func from base class
         virtual tmp<volScalarField> kappaEff
         (
-            const volScalarField&
+            const volScalarField& alphat
         ) const
         {
-            return tmp<volScalarField>(nullptr);
+            return volScalarField::New
+            (
+                "kappaEff",
+                Cp()*(this->alpha_ + alphat)
+            );
         }
 
         //- Effective thermal turbulent diffusivity for temperature
@@ -220,7 +224,13 @@ public:
             const label patchi
         ) const
         {
-            return tmp<scalarField>(nullptr);
+            return
+                Cp
+                (
+                    this->T_.boundaryField()[patchi],
+                    patchi
+                )
+            *(this->alpha_.boundaryField()[patchi] + alphat);
         }
 
         //- Effective thermal turbulent diffusivity of mixture [kg/m/s]
@@ -244,7 +254,7 @@ public:
             const label patchi
         ) const
         {
-            return tmp<scalarField>(nullptr);
+            return this->alpha_.boundaryField()[patchi] + alphat;
         }
 
         //- Return the name of the thermo physics
@@ -257,7 +267,7 @@ public:
         //  i.e. rho != f(p)
         virtual bool incompressible() const
         {
-            return true;
+            return false;
         }
 
         //- Return true if the equation of state is isochoric
